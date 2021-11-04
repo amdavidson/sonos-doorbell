@@ -1,0 +1,9 @@
+[Unit]
+Description=Sonos Doorbell Podman container
+Wants=multi-user.target
+[Service]
+Restart=always
+ExecStart=/usr/bin/podman start -a sonos-doorbell
+ExecStop=/usr/bin/podman stop -t 10 sonos-doorbell
+[Install]
+WantedBy=default.target
