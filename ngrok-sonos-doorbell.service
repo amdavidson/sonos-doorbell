@@ -1,0 +1,16 @@
+[Unit]
+Description=Share local port(s) with ngrok
+After=syslog.target network.target
+
+[Service]
+PrivateTmp=true
+Type=simple
+Restart=always
+RestartSec=3
+ExecStart=/home/geoffrey/.local/bin/ngrok start --log /home/geoffrey/.local/share/ngrok/ngrok.log --config /home/geoffrey/.config/ngrok/ngrok.yml sonos-doorbell
+#ExecStop=/bin/kill $MAINPID
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target

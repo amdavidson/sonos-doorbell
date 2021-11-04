@@ -1,0 +1,9 @@
+authtoken: token23409823rh283f08sadfjj 
+
+tunnels:
+  sonos-doorbell:
+    proto: http
+    addr: 5000
+    region: us
+    auth: "asdf:asdf"
+    subdomain: my-subdomain 
